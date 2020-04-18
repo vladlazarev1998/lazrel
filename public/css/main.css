@@ -1,0 +1,37 @@
+body{
+    overflow: hidden;
+}
+#full_admin_content{
+    margin-top: -1rem;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+#left_column{
+    min-height: 80vh;
+    background-color: #3490dc;
+
+}
+#left_column ul{
+    list-style: none;
+    padding: 0;
+}
+#left_column ul li{
+    margin-top: 20px;
+}
+#left_column ul a{
+    color: white;
+    font-size: 25px;
+    padding: 15px;
+}
+#admin_content{
+    padding-top: 20px;
+}
+#admin_content .row > .col-sm-6:first-child{
+    border-right: 1px solid black;
+}
+#admin_content .row .col-sm-6, #admin_content h2{
+    border-bottom: 1px solid black;
+}
+.category_info table{
+    width: 100%;
+}
