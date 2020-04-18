@@ -46,7 +46,6 @@ Route::prefix('admin')->middleware('auth')->group(function (){
 });
 
 Route::get('{alias}', 'AliasController@index')->name('alias');
-
 //Route::get('category', 'ProductsController@index')->name('category');
 //Route::get('category/{category_id}', 'ProductsController@category');
 //Route::get('product/{product_id}', 'ProductsController@product');
