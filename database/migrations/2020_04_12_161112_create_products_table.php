@@ -18,6 +18,9 @@ class CreateProductsTable extends Migration
             $table->string('name');
             $table->text('description');
             $table->integer('category_id')->default(NULL);
+            $table->integer('price')->default(0);
+            $table->integer('action')->default(0);
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

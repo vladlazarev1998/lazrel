@@ -40,14 +40,40 @@ class ProductController extends Controller
         ]);
 
         if($request->id){
-            DB::update('update products set name = "' . $request->name . '", description = "' . $request->description .'", status = "'. $request->status .'", category_id = "'. $request->category .'" where id = ?', [$request->id]);
+            $sql = 'update products set
+                name        = "' . $request->name . '",
+                description = "' . $request->description .'",
+                status      = "'. $request->status .'", ';
+
+
+            if($request->category){
+                $sql .= 'category_id = "'. $request->category .'",';
+            }
+            if($request->price){
+                $sql .= 'price = "'. $request->price .'",';
+            }
+            if($request->action){
+                $sql .= 'action      = "'. $request->action .'"';
+            }
+
+            $sql .= 'where id = ?';
+            DB::update($sql, [$request->id]);
         }else{
             $product = new App\Product();
 
             $product->name = $request->name;
             $product->description = $request->description;
             $product->status = $request->status;
-            $product->category_id = $request->category;
+
+            if($request->category){
+                $product->category_id = $request->category;
+            }
+            if($request->price){
+                $product->price = $request->price;
+            }
+            if($request->action){
+                $product->action = $request->action;
+            }
 
             $product->save();
         }

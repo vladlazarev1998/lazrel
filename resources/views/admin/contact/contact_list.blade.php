@@ -1,5 +1,8 @@
-@include('includes.header')
+@extends('includes.header')
 
+@section('title', 'Admin Page - Contact')
+
+@section('content')
 <div class="row" id="full_admin_content">
     @include('admin.left_column')
     <div class="col-sm-9" id="admin_content">
@@ -28,4 +31,4 @@
         </div>
     </div>
 </div>
-@include('includes.footer')
+@endsection

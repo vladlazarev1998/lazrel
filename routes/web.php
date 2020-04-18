@@ -26,9 +26,9 @@ Route::post('/contact/send','ContactController@send')->name('contact-form');
 
 Auth::routes();
 
-Route::match(['get', 'post'], 'register', function (){
-   redirect('/');
-});
+//Route::match(['get', 'post'], 'register', function (){
+//   redirect('/');
+//});
 
 Route::get('logout', 'Auth\LoginController@logout');
 

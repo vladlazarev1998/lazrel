@@ -1,4 +1,8 @@
-@include('includes.header')
+@extends('includes.header')
+
+@section('title', 'Error - Not Found')
+
+@section('content')
     <style>
         html, body {
             background-color: #fff;
@@ -42,5 +46,4 @@
     <div class="message" style="padding: 10px;">
         Not Found            </div>
 </div>
-
-@include('includes.footer')
+@endsection

@@ -1,4 +1,8 @@
-@include('includes.header')
+@extends('includes.header')
+
+@section('title', 'Category')
+
+@section('content')
 <div class="container">
     <div class="row">
         @if($categories)
@@ -14,4 +18,4 @@
     </div>
 </div>
 @include('includes.product_block')
-@include('includes.footer')
+@endsection

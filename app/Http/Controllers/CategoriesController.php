@@ -18,6 +18,8 @@ class CategoriesController extends Controller
 
     public function category($category_id){
         $products = App\Product::where('category_id', $category_id)->where('status', 1)->get();
-        return view('category', compact('products'));
+        $category = App\Category::where('id',$category_id)->get()->first();
+
+        return view('category', compact('products', 'category'));
     }
 }

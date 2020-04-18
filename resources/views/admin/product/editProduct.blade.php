@@ -1,5 +1,8 @@
-@include('includes.header')
+@extends('includes.header')
 
+@section('title', 'Admin Page - Edit Product')
+
+@section('content')
 <div class="row" id="full_admin_content">
     @include('admin.left_column')
     <div class="col-sm-9" id="admin_content">
@@ -33,6 +36,22 @@
                             </div>
                             <div class="col-sm-9">
                                 <textarea type="text" class="form-control" rows="3" name="description" id="" value="">@if($product){{ $product->description }}@endif</textarea>
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-3">
+                                <label for="price">Цена</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control" name="price" id="price" value="@if($product){{ $product->price }}@endif">
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-3">
+                                <label for="action">Акция</label>
+                            </div>
+                            <div class="col-sm-9">
+                                <input type="number" class="form-control" name="action" id="action" value="@if($product){{ $product->action }}@endif">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -69,4 +88,4 @@
         </div>
     </div>
 </div>
-@include('includes.footer')
+@endsection
